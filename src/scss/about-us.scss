@@ -12,9 +12,29 @@
     right: 30px;
     font-family: $playFairDisplay;
     font-size: 300px;
-    color: #f9eadd;
+    color: rgba(227, 160, 98, 0.22);
     font-weight: bold;
     z-index: -1;
+  }
+
+  .slogan {
+    position: absolute;
+    right: 30px;
+    bottom: 70px;
+    color: #e3a062;
+    font-family: $playFairDisplay;
+    font-size: 14px;
+    @include transform(rotate(-90deg));
+
+    &::after {
+      content: '';
+      width: 50px;
+      height: 2px;
+      position: absolute;
+      right: -60px;
+      bottom: 7px;
+      background-color: #e3a062;
+    }
   }
 }
 
@@ -87,26 +107,6 @@
       &:focus {
         font-size: 33px;
       }
-    }
-  }
-
-  .slogan {
-    position: absolute;
-    right: 30px;
-    bottom: 70px;
-    color: #e3a062;
-    font-family: $playFairDisplay;
-    font-size: 14px;
-    @include transform(rotate(-90deg));
-
-    &::after {
-      content: '';
-      width: 50px;
-      height: 2px;
-      position: absolute;
-      right: -60px;
-      bottom: 7px;
-      background-color: #e3a062;
     }
   }
 }

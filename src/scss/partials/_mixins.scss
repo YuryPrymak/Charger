@@ -13,3 +13,11 @@
   -o-transform: $property;
   transform: $property;
 }
+
+@mixin objectFit($value) {
+  -webkit-object-fit: $value;
+  -moz-object-fit: $value;
+  -ms-object-fit: $value;
+  -o-object-fit: $value;
+  object-fit: $value;
+}
