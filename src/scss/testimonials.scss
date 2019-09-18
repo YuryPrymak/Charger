@@ -1,0 +1,132 @@
+@import 'src/scss/partials/_mixins';
+@import 'src/scss/partials/_variables';
+
+.testimonials {
+  width: 100%;
+  position: relative;
+  padding: 150px 10px;
+  background: linear-gradient(rgba(0, 0, 0, .95), rgba(0, 0, 0, .95)),
+              url('/src/img/testimonials/ChevroletCamaro.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &::before {
+    content: 'T';
+    position: absolute;
+    top: 0px;
+    left: 30px;
+    font-family: $playFairDisplay;
+    font-size: 300px;
+    color: rgba(227, 160, 98, 0.22);
+    font-weight: bold;
+    z-index: 0;
+    @include transform(translateY(-50%));
+  }
+
+  &::after {
+    content: '&';
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    font-family: $playFairDisplay;
+    font-size: 100px;
+    color: rgba(227, 160, 98, 0.2);
+    font-weight: bold;
+    z-index: 0;
+  }
+
+  .slogan {
+    position: absolute;
+    left: 30px;
+    bottom: 70px;
+    color: #e3a062;
+    font-family: $playFairDisplay;
+    font-size: 14px;
+    @include transform(rotate(-90deg));
+
+    &::after {
+      content: '';
+      width: 50px;
+      height: 2px;
+      position: absolute;
+      right: -60px;
+      bottom: 7px;
+      background-color: #e3a062;
+    }
+  }
+}
+
+.testimonials-wrapper {
+  max-width: 1140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+
+  .btn {
+    border: none;
+    background-color: transparent;
+    background-position: contain;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      svg {
+        fill: #fff;
+      }
+    }
+
+    svg {
+      fill: #808080;
+      @include transition(all, .3s, ease-in-out);
+    }
+  }
+
+  .slider {
+    width: 100%;
+    max-width: 770px;
+    position: relative;
+    margin: 0 10px;
+    text-align: center;
+    overflow: hidden;
+
+    .slide {
+      .testimonial {
+        position: relative;
+        margin-bottom: 60px;
+        font-family: $playFairDisplay;
+        font-size: 36px;
+        font-style: italic;
+
+        &::after {
+          content: '';
+          width: 130px;
+          height: 2px;
+          position: absolute;
+          bottom: -30px;
+          left: 50%;
+          background-color: #de9045;
+          @include transform(translateX(-50%));
+        }
+      }
+
+      .name {
+        margin-bottom: 10px;
+        font-family: $muli;
+        font-size: 24px;
+      }
+
+      .car {
+        font-family: $muli;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .hide-slide {
+    width: 100%;
+    position: absolute;
+    @include transform(translateX(100%));
+  }
+}
