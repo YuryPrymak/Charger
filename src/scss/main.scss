@@ -16,3 +16,13 @@ a {
 *:focus {
   outline: none;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #b4b4b4;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #e3a062;
+}

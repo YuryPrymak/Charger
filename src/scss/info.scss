@@ -1,20 +1,20 @@
 @import 'src/scss/partials/_mixins';
 @import 'src/scss/partials/_variables';
 
-.about-us {
+.info {
   position: relative;
   padding: 120px 10px;
 
   &::before {
-    content: 'A';
+    content: 'C';
     position: absolute;
     top: 0px;
-    right: 30px;
+    right: 130px;
     font-family: $playFairDisplay;
     font-size: 300px;
     color: rgba(227, 160, 98, 0.22);
     font-weight: bold;
-    z-index: -1;
+    @include transform(translateY(-50%));
   }
 
   .slogan {
@@ -38,7 +38,7 @@
   }
 }
 
-.about-us-wrapper {
+.info-wrapper {
   max-width: 1140px;
   display: flex;
   justify-content: space-between;
@@ -81,11 +81,40 @@
     }
 
     .description {
-      margin-bottom: 25px;
-      color: #000;
-      font-family: $muli;
-      font-size: 16px;
-      line-height: 1.5;
+      height: 230px;
+      margin-bottom: 20px;
+      padding-right: 30px;
+      overflow: auto;
+
+      &::-webkit-scrollbar {
+        width: 2px;
+        background-image: linear-gradient(90deg, transparent 50%, #b4b4b4 50%);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: #e3a062;
+      }
+
+      p {
+        margin-bottom: 25px;
+        color: #000;
+        font-family: $muli;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      p:first-letter {
+        margin-right: 10px;
+        float: left;
+        color: #e3a062;
+        font-size: 48px;
+        line-height: 48px;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
     }
 
     .btn-more {
