@@ -1,4 +1,5 @@
 import './js/main'
+import './js/mobile-nav'
 
 import './scss/main.scss'
 import './scss/header.scss'
@@ -7,4 +8,5 @@ import './scss/services.scss'
 import './scss/projects.scss'
 import './scss/testimonials.scss'
 import './scss/info.scss'
+import './scss/footer.scss'
 import './scss/footer.scss'

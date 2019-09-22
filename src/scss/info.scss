@@ -1,5 +1,6 @@
 @import 'src/scss/partials/_mixins';
 @import 'src/scss/partials/_variables';
+@import 'src/scss/partials/_media-queries';
 
 .info {
   position: relative;
@@ -9,12 +10,21 @@
     content: 'C';
     position: absolute;
     top: 0px;
-    right: 130px;
+    right: 30px;
     font-family: $playFairDisplay;
     font-size: 300px;
     color: rgba(227, 160, 98, 0.22);
     font-weight: bold;
     @include transform(translateY(-50%));
+
+    @include media-md {
+      font-size: 150px;
+      right: 10px;
+    }
+  }
+
+  @include media-md {
+    padding: 60px 10px;
   }
 
   .slogan {
@@ -26,6 +36,17 @@
     font-size: 14px;
     @include transform(rotate(-90deg));
 
+    @include media-lg {
+      right: 70px;
+      bottom: 30px;
+      @include transform(rotate(0));
+    }
+
+    @include media-md {
+      bottom: 15px;
+      font-size: 18px;
+    }
+
     &::after {
       content: '';
       width: 50px;
@@ -34,6 +55,15 @@
       right: -60px;
       bottom: 7px;
       background-color: #e3a062;
+
+      @include media-lg {
+        right: -60px;
+        bottom: 7px;
+      }
+
+      @include media-md {
+        bottom: 8px;
+      }
     }
   }
 }
@@ -45,10 +75,17 @@
   align-items: center;
   margin: 0 auto;
 
+  @include media-md {
+    flex-direction: column;
+  }
+
   .img-wrapper {
     max-width: 650px;
     max-height: 550px;
-    background: red;
+
+    @include media-md {
+      max-width: 550px;
+    }
 
     img {
       width: 100%;
@@ -59,14 +96,25 @@
 
   .company-info {
     max-width: 390px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-left: 50px;
+
+    @include media-md {
+      max-width: 550px;
+      order: -1;
+      margin-left: 0;
+      margin-bottom: 20px;
+      text-align: center;
+    }
 
     .title {
       position: relative;
       margin-bottom: 25px;
       color: #000;
       font-family: $playFairDisplay;
-      font-size: 65px;
+      font-size: 60px;
       font-weight: bold;
 
       &::after {
@@ -78,13 +126,30 @@
         bottom: -10px;
         background-color: #e3a062;
       }
+
+      @include media-md {
+        font-size: 70px;
+        text-align: center;
+      }
+
+      @include media-sm {
+        font-size: 76px;
+      }
     }
 
     .description {
       height: 230px;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       padding-right: 30px;
       overflow: auto;
+
+      @include media-md {
+        padding-right: 20px;
+      }
+
+      @include media-sm {
+        padding-right: 10px;
+      }
 
       &::-webkit-scrollbar {
         width: 2px;
@@ -102,6 +167,15 @@
         font-family: $muli;
         font-size: 16px;
         line-height: 1.5;
+        text-align: left;
+
+        @include media-md {
+          font-size: 20px;
+        }
+  
+        @include media-sm {
+          font-size: 24px;
+        }
       }
 
       p:first-letter {
@@ -110,6 +184,16 @@
         color: #e3a062;
         font-size: 48px;
         line-height: 48px;
+
+        @include media-md {
+          font-size: 58px;
+          line-height: 58px;
+        }
+  
+        @include media-sm {
+          font-size: 72px;
+          line-height: 72px;
+        }
       }
 
       p:last-child {
@@ -125,7 +209,7 @@
       background-color: transparent;
       color: #000;
       font-family: $muli;
-      font-size: 31px;
+      font-size: 16px;
       text-transform: uppercase;
       text-align: center;
       line-height: 50px;
@@ -135,6 +219,14 @@
       &:hover,
       &:focus {
         font-size: 33px;
+      }
+
+      @include media-md {
+        font-size: 20px;
+      }
+
+      @include media-sm {
+        font-size: 24px;
       }
     }
   }

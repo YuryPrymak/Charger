@@ -9,74 +9,83 @@
   <link rel="stylesheet" href="dist/main.css">
 </head>
 <body>
-  <header>
-    <div class="header-wrapper">
-      <a class="logo" href="#">
-        <img src="/src/img/logo.png" alt="Logo">
-        <h1 class="title">
-          <span>Charger</span>
-          <span>Customs</span>
-        </h1>
-      </a>
-      <nav>
-        <ul>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Projects</a></li>
-        </ul>
-      </nav>
-      <div class="slider">
-        <button class="btn btn-prev-slide">Prev</button>
-        <ul class="list-of-slides">
-          <li class="slide">
-            <p class="title">We’re Charger</p>
-            <p class="description">
-              One of the most powerful and recognized brand names in the custom automotive industry.
-            </p>
-            <button class="btn-read-more">Read More</button>
-          </li>
-          <li class="slide">
-            <p class="title">We’re Charger</p>
-            <p class="description">
-              One of the most powerful and recognized brand names in the custom automotive industry.
-            </p>
-            <button class="btn-read-more">Read More</button>
-          </li>
-          <li class="slide">
-            <p class="title">We’re Charger</p>
-            <p class="description">
-              One of the most powerful and recognized brand names in the custom automotive industry.
-            </p>
-            <button class="btn-read-more">Read More</button>
-          </li>
-          <li class="slide">
-            <p class="title">We’re Charger</p>
-            <p class="description">
-              One of the most powerful and recognized brand names in the custom automotive industry.
-            </p>
-            <button class="btn-read-more">Read More</button>
-          </li>
-          <li class="slide">
-            <p class="title">We’re Charger</p>
-            <p class="description">
-              One of the most powerful and recognized brand names in the custom automotive industry.
-            </p>
-            <button class="btn-read-more">Read More</button>
-          </li>
-        </ul>  
-        <button class="btn btn-next-slide">Next</button>
-        <div class="counter">
-          <div class="curent-slide">01</div>
-          <div class="quantity-of-slides">10</div>
-        </div>
+  <header class="header">
+    <a class="logo" href="#">
+      <img src="/src/img/logo.png" alt="Logo">
+      <div class="title">
+        <span>Charger</span>
+        <span>Customs</span>
       </div>
-      <ul class="social">
-        <li><a href="#" target="_blank">Facebook</a></li>
-        <li><a href="#" target="_blank">Twitter</a></li>
-        <li><a href="#" target="_blank">Youtube</a></li>
+    </a>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Projects</a></li>
       </ul>
-      <button class="btn-scroll-down">Scroll down</button>
+    </nav>
+    <button class="btn-mobile-nav-default">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11">
+        <path d="M1827,41.013V42h-14V41.013h14Zm0,10V52h-14V51.013h14Zm0-5V47h-14V46.013h14Z" transform="translate(-1813 -41)"/>
+      </svg>
+      Menu
+    </button>
+    <button class="btn-mobile-nav-close btn-hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+        <path d="M10 8.586l-7.071-7.071-1.414 1.414 7.071 7.071-7.071 7.071 1.414 1.414 7.071-7.071 7.071 7.071 1.414-1.414-7.071-7.071 7.071-7.071-1.414-1.414-7.071 7.071z"></path>
+      </svg>
+    </button>
+    <div class="slider">
+      <button class="btn btn-prev-slide">Prev</button>
+      <ul class="list-of-slides">
+        <li class="slide">
+          <h1 class="title">We’re<br>Charger</h1>
+          <p class="description">
+            One of the most powerful and recognized brand names in the custom automotive industry.
+          </p>
+          <button class="btn-read-more">Read More</button>
+        </li>
+        <li class="slide">
+          <p class="title">We’re Charger</p>
+          <p class="description">
+            One of the most powerful and recognized brand names in the custom automotive industry.
+          </p>
+          <button class="btn-read-more">Read More</button>
+        </li>
+        <li class="slide">
+          <p class="title">We’re Charger</p>
+          <p class="description">
+            One of the most powerful and recognized brand names in the custom automotive industry.
+          </p>
+          <button class="btn-read-more">Read More</button>
+        </li>
+        <li class="slide">
+          <p class="title">We’re Charger</p>
+          <p class="description">
+            One of the most powerful and recognized brand names in the custom automotive industry.
+          </p>
+          <button class="btn-read-more">Read More</button>
+        </li>
+        <li class="slide">
+          <p class="title">We’re Charger</p>
+          <p class="description">
+            One of the most powerful and recognized brand names in the custom automotive industry.
+          </p>
+          <button class="btn-read-more">Read More</button>
+        </li>
+      </ul>  
+      <button class="btn btn-next-slide">Next</button>
+      <div class="counter">
+        <p class="curent-slide">01</p>
+        <p class="quantity-of-slides">10</p>
+      </div>
     </div>
+    <ul class="social">
+      <li><a href="#" target="_blank">Facebook</a></li>
+      <li><a href="#" target="_blank">Twitter</a></li>
+      <li><a href="#" target="_blank">Youtube</a></li>
+    </ul>
+    <button class="btn-scroll-down">Scroll down</button>
   </header>
 
   <main>
@@ -152,7 +161,7 @@
     </section>
 
     <section class="projects">
-      <h1 class="title">Projects</h1>
+      <h2 class="title">Projects</h2>
       <div class="slider">
         <ul class="row">
           <li class="slide"><img src="/src/img/projects/car1.jpg" alt="Car"></li>
@@ -192,14 +201,14 @@
             <p class="name">Helen Smith</p>
             <p class="car">Chevrolet Camaro</p>
           </li>
-          <li class="slide hide-slide">
+          <li class="slide slide-hidden">
             <p class="testimonial">
               Always a great experience! They take good care of my car and turn it around quickly.
             </p>
             <p class="name">John Brown</p>
             <p class="car">Dodge Challenger</p>
           </li>
-          <li class="slide hide-slide">
+          <li class="slide slide-hidden">
             <p class="testimonial">
               Always reasonable prices with the great job that was done on my vehicle.
             </p>
@@ -223,32 +232,24 @@
         </div>
         <div class="company-info">
           <h2 class="title">Charger</h2>
-            <div class="description">
-              <p>
-                The Charger Customs&#174; has grown into one of  T  the most powerful 
-                and brand names in the  custom automotive industry. We now have 
-                franchises stretching across the world. We have worked with some 
-                of the largest brands in the world, including Fortune 500 companies. 
-                We are now a household name in multiple countries and plan to 
-                continue dominating the custom car world and expand our global 
-                reach with amazing rides and concepts.
-              </p>
-              <p>
-                We have an exceptional team, both in the workshop and office. 
-                We've done what others can't and we constantly strive to push 
-                the boundaries and expectations of this industry. If you or your 
-                company feel that you have something beneficial to offer our brand, 
-                we look forward to hearing from you.
-              </p>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore 
-                nisi repellat exercitationem quo veniam? Omnis consectetur at 
-                doloribus ipsa dolorum sequi perspiciatis facere animi illum, 
-                debitis voluptates, eum vero iste voluptate. Incidunt numquam aut 
-                voluptatem earum ex assumenda. Dicta unde labore atque, mollitia 
-                nostrum ipsum beatae. Expedita officiis repellendus dolore?
-              </p>
-            </div>
+          <div class="description">
+            <p>
+              The Charger Customs&#174; has grown into one of  T  the most powerful 
+              and brand names in the  custom automotive industry. We now have 
+              franchises stretching across the world. We have worked with some 
+              of the largest brands in the world, including Fortune 500 companies. 
+              We are now a household name in multiple countries and plan to 
+              continue dominating the custom car world and expand our global 
+              reach with amazing rides and concepts.
+            </p>
+            <p>
+              We have an exceptional team, both in the workshop and office. 
+              We've done what others can't and we constantly strive to push 
+              the boundaries and expectations of this industry. If you or your 
+              company feel that you have something beneficial to offer our brand, 
+              we look forward to hearing from you.
+            </p>
+          </div>
           <a href="#" class="btn-more">More</a>
         </div>
       </div>
@@ -274,9 +275,10 @@
           </ul>
         </nav>
       </div>
-      <div class="info-wrapper">
+      <div class="reference-wrapper">
         <p class="copyright">&copy; Copyright 2017. All Rights Reserved</p>
-        <p class="reference">Designed by 
+        <p class="reference">
+          Designed by 
           <a href="https://dribbble.com/YevdokimovKirill" target="_blank">Kirill Yevdokimov</a>
         </p>
       </div>

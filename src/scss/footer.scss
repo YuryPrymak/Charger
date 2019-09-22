@@ -1,10 +1,15 @@
 @import 'src/scss/partials/_mixins';
 @import 'src/scss/partials/_variables';
+@import 'src/scss/partials/_media-queries';
 
 footer {
   width: 100%;
   padding: 40px 10px;
   background-color: #000;
+
+  @include media-md {
+    padding: 20px 10px;
+  }
 }
 
 .footer-wrapper {
@@ -17,8 +22,13 @@ footer {
     align-items: center;
     margin-bottom: 30px;
 
+    @include media-md {
+      justify-content: center;
+    }
+
     .logo {
       display: flex;
+      align-items: flex-start;
       cursor: pointer;
   
       .title {
@@ -27,7 +37,7 @@ footer {
         font-family: $playFairDisplay;
         font-size: 24px;
         text-transform: uppercase;
-        line-height: 1.2;
+        line-height: .9;
         opacity: .9;
         @include transition(all, .2s, linear);
   
@@ -44,11 +54,19 @@ footer {
           font-family: $muli;
           font-size: 12px;
           font-weight: normal;
+
+          @include media-sm {
+            font-size: 16px;
+          }
         }
       }
     }
 
     nav {
+      @include media-md {
+        display: none;
+      }
+
       ul {
         display: flex;
 
@@ -73,17 +91,47 @@ footer {
     }
   }
 
-  .info-wrapper {
+  .reference-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    @include media-md {
+      flex-direction: column;
+      align-items: center;
+    }
+
     .copyright {
       color: #7b7b7b;
       font-family: $muli;
       font-size: 14px;
+
+      @include media-md {
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+
+      @include media-sm {
+        font-size: 18px;
+      }
+      
+      @include media-xs {
+        text-align: center;
+        line-height: 1.5;
+      }
     }
 
     .reference {
       color: #7b7b7b;
       font-family: $muli;
       font-size: 14px;
+
+      @include media-md {
+        font-size: 16px;
+      }
+
+      @include media-sm {
+        font-size: 18px;
+      }
     }
   }
 }

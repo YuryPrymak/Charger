@@ -1,5 +1,6 @@
 @import 'src/scss/partials/_mixins';
 @import 'src/scss/partials/_variables';
+@import 'src/scss/partials/_media-queries';
 
 .testimonials {
   width: 100%;
@@ -22,6 +23,15 @@
     font-weight: bold;
     z-index: 0;
     @include transform(translateY(-50%));
+
+    @include media-md {
+      font-size: 150px;
+      left: 10px;
+    }
+  }
+
+  @include media-md {
+    padding: 60px 10px;
   }
 
   &::after {
@@ -45,14 +55,34 @@
     font-size: 14px;
     @include transform(rotate(-90deg));
 
+    @include media-lg {
+      left: 70px;
+      bottom: 30px;
+      @include transform(rotate(0));
+    }
+
+    @include media-md {
+      bottom: 15px;
+      font-size: 18px;
+    }
+
     &::after {
       content: '';
       width: 50px;
       height: 2px;
       position: absolute;
-      right: -60px;
+      left: 95px;
       bottom: 7px;
       background-color: #e3a062;
+
+      @include media-lg {
+        left: -60px;
+        bottom: 7px;
+      }
+
+      @include media-md {
+        bottom: 8px;
+      }
     }
   }
 }
@@ -65,9 +95,11 @@
   margin: 0 auto;
 
   .btn {
+    min-width: 21px;
+    height: 40px;
+    position: relative;
     border: none;
     background-color: transparent;
-    background-position: contain;
     cursor: pointer;
 
     &:hover,
@@ -78,6 +110,9 @@
     }
 
     svg {
+      position: absolute;
+      top: 0;
+      left: -9px;
       fill: #808080;
       @include transition(all, .3s, ease-in-out);
     }
@@ -115,18 +150,34 @@
         margin-bottom: 10px;
         font-family: $muli;
         font-size: 24px;
+
+        @include media-md {
+          font-size: 26px;
+        }
+  
+        @include media-sm {
+          font-size: 28px;
+        }
       }
 
       .car {
         font-family: $muli;
         font-size: 14px;
+
+        @include media-md {
+          font-size: 16px;
+        }
+  
+        @include media-sm {
+          font-size: 18px;
+        }
       }
     }
-  }
 
-  .hide-slide {
-    width: 100%;
-    position: absolute;
-    @include transform(translateX(100%));
+    .slide-hidden {
+      width: 100%;
+      position: absolute;
+      @include transform(translateX(100%));
+    }
   }
 }

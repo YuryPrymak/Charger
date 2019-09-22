@@ -1,5 +1,6 @@
 @import 'src/scss/partials/_mixins';
 @import 'src/scss/partials/_variables';
+@import 'src/scss/partials/_media-queries';
 
 .about-us {
   position: relative;
@@ -17,6 +18,10 @@
     z-index: -1;
   }
 
+  @include media-md {
+    padding: 60px 10px;
+  }
+
   .slogan {
     position: absolute;
     right: 30px;
@@ -26,6 +31,17 @@
     font-size: 14px;
     @include transform(rotate(-90deg));
 
+    @include media-lg {
+      right: 70px;
+      bottom: 30px;
+      @include transform(rotate(0));
+    }
+
+    @include media-md {
+      bottom: 15px;
+      font-size: 18px;
+    }
+
     &::after {
       content: '';
       width: 50px;
@@ -34,6 +50,15 @@
       right: -60px;
       bottom: 7px;
       background-color: #e3a062;
+
+      @include media-lg {
+        right: -60px;
+        bottom: 7px;
+      }
+
+      @include media-md {
+        bottom: 8px;
+      }
     }
   }
 }
@@ -45,10 +70,17 @@
   align-items: center;
   margin: 0 auto;
 
+  @include media-md {
+    flex-direction: column;
+  }
+
   .img-wrapper {
     max-width: 650px;
     max-height: 550px;
-    background: red;
+
+    @include media-md {
+      max-width: 550px;
+    }
 
     img {
       width: 100%;
@@ -59,16 +91,27 @@
 
   .company-info {
     max-width: 390px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-left: 50px;
+
+    @include media-md {
+      max-width: 550px;
+      order: -1;
+      margin-left: 0;
+      margin-bottom: 20px;
+      text-align: center;
+    }
 
     .title {
       position: relative;
       margin-bottom: 25px;
       color: #000;
       font-family: $playFairDisplay;
-      font-size: 65px;
+      font-size: 60px;
       font-weight: bold;
-
+      
       &::after {
         content: '';
         width: 47px;
@@ -78,6 +121,15 @@
         bottom: -10px;
         background-color: #e3a062;
       }
+
+      @include media-md {
+        text-align: center;
+        font-size: 70px;
+      }
+
+      @include media-sm {
+        font-size: 76px;
+      }
     }
 
     .description {
@@ -86,6 +138,14 @@
       font-family: $muli;
       font-size: 16px;
       line-height: 1.5;
+
+      @include media-md {
+        font-size: 20px;
+      }
+
+      @include media-sm {
+        font-size: 24px;
+      }
     }
 
     .btn-more {
@@ -96,7 +156,7 @@
       background-color: transparent;
       color: #000;
       font-family: $muli;
-      font-size: 31px;
+      font-size: 16px;
       text-transform: uppercase;
       text-align: center;
       line-height: 50px;
@@ -106,6 +166,14 @@
       &:hover,
       &:focus {
         font-size: 33px;
+      }
+
+      @include media-md {
+        font-size: 20px;
+      }
+
+      @include media-sm {
+        font-size: 24px;
       }
     }
   }

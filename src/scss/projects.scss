@@ -1,5 +1,6 @@
 @import 'src/scss/partials/_mixins';
 @import 'src/scss/partials/_variables';
+@import 'src/scss/partials/_media-queries';
 
 .projects {
   width: 100%;
@@ -9,13 +10,63 @@
    &::before {
     content: 'P';
     position: absolute;
-    top: 150px;
+    top: 79px;
     right: 30px;
     font-family: $playFairDisplay;
     font-size: 300px;
     color: rgba(227, 160, 98, 0.22);
     font-weight: bold;
     z-index: -1;
+
+    @include media-md {
+      font-size: 150px;
+      top: 180px;
+      right: 10px;
+    }
+
+    @include media-sm {
+      top: 210px;
+    }
+  }
+
+  .slogan {
+    position: absolute;
+    right: 30px;
+    bottom: 70px;
+    color: #e3a062;
+    font-family: $playFairDisplay;
+    font-size: 14px;
+    @include transform(rotate(-90deg));
+
+    @include media-lg {
+      right: 70px;
+      bottom: 30px;
+      @include transform(rotate(0));
+    }
+
+    @include media-md {
+      bottom: 15px;
+      font-size: 18px;
+    }
+
+    &::after {
+      content: '';
+      width: 50px;
+      height: 2px;
+      position: absolute;
+      right: -60px;
+      bottom: 7px;
+      background-color: #e3a062;
+
+      @include media-lg {
+        right: -60px;
+        bottom: 7px;
+      }
+
+      @include media-md {
+        bottom: 8px;
+      }
+    }
   }
 
   .title {
@@ -23,7 +74,7 @@
     margin-bottom: 90px;
     color: #000;
     font-family: $playFairDisplay;
-    font-size: 65px;
+    font-size: 60px;
     font-weight: bold;
     text-align: center;
   
@@ -37,19 +88,37 @@
       background-color: #e3a062;
       @include transform(translateX(-50%));
     }
+
+    @include media-md {
+      font-size: 70px;
+    }
+
+    @include media-sm {
+      font-size: 76px;
+    }
   }
 
   .slider {
-    width: 100%;
     overflow: hidden;
 
     .row {
-      height: 300px;
+      height: 350px;
       display: flex;
       margin-bottom: 50px;
 
+      @include media-lg {
+        height: 300px;
+      }
+
+      @include media-md {
+        height: 250px;
+      }
+
+      @include media-sm {
+        height: 200px;
+      }
+
       .slide {
-        width: calc(100% / 7);
         height: 80%;
         margin: 0 25px;
 
@@ -62,7 +131,6 @@
         }
 
         img {
-          width: 100%;
           height: 100%;
           @include objectFit(cover);
         }
@@ -70,21 +138,17 @@
     }
 
     .row:nth-child(1) {
-      width: 200%;
       align-items: flex-end;
 
       .slide:nth-child(3n+3) {
-        width: calc(100% / 6);
         height: 100%;
       }
     }
 
     .row:nth-child(2) {
-      width: 220%;
       align-items: flex-start;
 
       .slide:nth-child(2n+2) {
-        width: calc(100% / 6);
         height: 100%;
       }
     }
@@ -99,7 +163,7 @@
     background-color: transparent;
     color: #000;
     font-family: $muli;
-    font-size: 31px;
+    font-size: 16px;
     text-transform: uppercase;
     text-align: center;
     line-height: 50px;
@@ -110,25 +174,13 @@
     &:focus {
       font-size: 33px;
     }
-  }
 
-  .slogan {
-    position: absolute;
-    right: 30px;
-    bottom: 70px;
-    color: #e3a062;
-    font-family: $playFairDisplay;
-    font-size: 14px;
-    @include transform(rotate(-90deg));
+    @include media-md {
+      font-size: 20px;
+    }
 
-    &::after {
-      content: '';
-      width: 50px;
-      height: 2px;
-      position: absolute;
-      right: -60px;
-      bottom: 7px;
-      background-color: #e3a062;
+    @include media-sm {
+      font-size: 24px;
     }
   }
 }
