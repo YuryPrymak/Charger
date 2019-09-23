@@ -23,6 +23,10 @@
     position: absolute;
     cursor: pointer;
 
+    @include media-sm {
+      top: 23px;
+    }
+
     .title {
       max-width: 130px;
       margin-left: 10px;
@@ -331,7 +335,24 @@
       font-family: $playFairDisplay;
       font-size: 26px;
       font-weight: bold;
+      overflow: hidden;
       @include transform(translateX(-50%));
+
+      &::after {
+        content: '';
+        width: 140px;
+        height: 1px;
+        position: absolute;
+        top: 14px;
+        left: 29px;
+        background-color: #989796;
+
+        @include media-sm {
+          width: 125px;
+          top: 18px;
+          left: 36px;
+        }
+      }
 
       @include media-md {
         bottom: 30px;
@@ -340,45 +361,28 @@
       @include media-sm {
         font-size: 34px;
       }
-
-      .curent-slide {
-        position: relative;
-
-        &::after {
-          content: '';
-          width: 140px;
-          height: 1px;
-          position: absolute;
-          top: 14px;
-          left: 29px;
-          background-color: #989796;
-
-          @include media-sm {
-            width: 125px;
-            top: 18px;
-            left: 36px;
-          }
-        }
-      }
-    }   
+    }
+    
+    .counter-anim {
+      @include animation(counter-anim, .7s, ease-out, 1);
+      @include animationFillMode(forwards);
+    }
 
     .list-of-slides {
       display: flex;
-      overflow: hidden;
-      position: relative;
+      flex-direction: column;
+      align-items: center;
       margin: 0 15px;
 
       @include media-sm {
         margin: 0 auto;
       }
 
-      .slide + .slide {
-        position: absolute;
-        @include transform(translateX(101%));
-      }
-
       .slide {
-        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
 
         .title {
           margin-bottom: 50px;
@@ -387,6 +391,10 @@
           font-size: 120px;
           font-weight: bold;
           line-height: .9;
+
+          @include media-md {
+            font-size: 112px;
+          }
 
           @include media-sm {
             text-align: center;
@@ -439,9 +447,7 @@
           }
 
           @include media-sm {
-            margin-left: 50%;
             font-size: 24px;
-            @include transform(translateX(-50%));
           }
 
           &::after {
@@ -455,6 +461,134 @@
           }
         }
       }
+
+      .hidden-slide {
+        display: none;
+      }
+
+      .show-slide {
+        .title {
+          @include animation(header-show-slide-title, .7s, ease-out, 1);
+          @include animationFillMode(forwards);
+        }
+
+        .description {
+          @include animation(header-show-slide-description, .7s, ease-out, 1);
+          @include animationFillMode(forwards);
+        }
+
+        .btn-read-more {
+          @include animation(header-show-slide-btn, .7s, ease-out, 1);
+          @include animationFillMode(forwards);
+        }
+      }
+
+      .hide-slide {
+        .title {
+          @include animation(header-hide-slide-title, .7s, ease-out, 1);
+          @include animationFillMode(forwards);
+        }
+
+        .description {
+          @include animation(header-hide-slide-description, .7s, ease-out, 1);
+          @include animationFillMode(forwards);
+        }
+
+        .btn-read-more {
+          @include animation(header-hide-slide-btn, .7s, ease-out, 1);
+          @include animationFillMode(forwards);
+        }
+      }
     }
+  }
+}
+
+@include keyframes(header-show-slide-title) {
+  from {
+    opacity: 0;
+    @include transform(translateY(-150%));
+  }
+
+  to {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+}
+
+@include keyframes(header-hide-slide-title) {
+  from {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+
+  to {
+    opacity: 0;
+    @include transform(translateY(-150%));
+  }
+}
+
+@include keyframes(header-show-slide-description) {
+  from {
+    opacity: 0;
+    @include transform(translateX(-150%));
+  }
+
+  to {
+    opacity: 1;
+    @include transform(translateX(0));
+  }
+}
+
+@include keyframes(header-hide-slide-description) {
+  from {
+    opacity: 1;
+    @include transform(translateX(0));
+  }
+
+  to {
+    opacity: 0;
+    @include transform(translateX(-150%));
+  }
+}
+
+@include keyframes(header-show-slide-btn) {
+  from {
+    opacity: 0;
+    @include transform(translateY(150%));
+  }
+
+  to {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+}
+
+@include keyframes(header-hide-slide-btn) {
+  from {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+
+  to {
+    opacity: 0;
+    @include transform(translateY(150%));
+  }
+}
+
+@include keyframes(counter-anim) {
+  from {
+    @include transform(translateX(0));
+  }
+
+  40% {
+    @include transform(translateY(100%));
+  }
+
+  60% {
+    @include transform(translateY(100%));
+  }
+
+  to {
+    @include transform(translateY(0));
   }
 }
