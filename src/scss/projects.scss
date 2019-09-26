@@ -99,12 +99,37 @@
   }
 
   .slider {
+    height: 750px;
+    position: relative;
+    margin-bottom: 50px;
     overflow: hidden;
+    
+    @include media-md {
+      height: 550px;
+    }
+
+    @include media-sm {
+      height: 400px;
+    }
 
     .row {
       height: 350px;
       display: flex;
-      margin-bottom: 50px;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      &:last-child {
+        top: 400px;
+
+        @include media-md {
+          top: 300px;
+        }
+
+        @include media-md {
+          top: 250px;
+        }
+      }
 
       @include media-lg {
         height: 300px;
@@ -121,6 +146,7 @@
       .slide {
         height: 80%;
         margin: 0 25px;
+        cursor: pointer;
 
         &:first-child {
           margin-left: 0;
@@ -132,7 +158,12 @@
 
         img {
           height: 100%;
+          display: block;
           @include objectFit(cover);
+          -moz-user-select: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
         }
       }
     }
