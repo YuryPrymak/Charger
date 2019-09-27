@@ -2,6 +2,7 @@ import './js/main'
 import './js/mobile-nav'
 import './js/header-slider'
 import './js/projects-slider'
+import './js/testimonials-slider'
 
 import './scss/main.scss'
 import './scss/header.scss'

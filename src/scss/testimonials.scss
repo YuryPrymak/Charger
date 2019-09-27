@@ -120,6 +120,7 @@
 
   .slider {
     width: 100%;
+    display: flex;
     max-width: 770px;
     position: relative;
     margin: 0 10px;
@@ -127,6 +128,8 @@
     overflow: hidden;
 
     .slide {
+      width: 100%;
+
       .testimonial {
         position: relative;
         margin-bottom: 60px;
@@ -174,10 +177,81 @@
       }
     }
 
-    .slide-hidden {
-      width: 100%;
+    .hidden-slide {
       position: absolute;
-      @include transform(translateX(100%));
+      transform: translateX(100%);
     }
+
+    .testimonials-prev-slide-hide {
+      position: absolute;
+      @include animation(testimonials-prev-slide-hide, .5s, ease-out, 1);
+      @include animationFillMode(forwards);
+    }
+
+    .testimonials-prev-slide-show {
+      position: static;
+      @include animation(testimonials-prev-slide-show, .5s, ease-out, 1);
+      @include animationFillMode(forwards);
+    }
+
+    .testimonials-next-slide-hide {
+      position: absolute;
+      @include animation(testimonials-next-slide-hide, .5s, ease-out, 1);
+      @include animationFillMode(forwards);
+    }
+
+    .testimonials-next-slide-show {
+      position: static;
+      @include animation(testimonials-next-slide-show, .5s, ease-out, 1);
+      @include animationFillMode(forwards);
+    }
+  }
+}
+
+@include keyframes(testimonials-prev-slide-hide) {
+  from {
+    opacity: 1;
+    @include transform(translateX(0));
+  }
+
+  to {
+    opacity: 0;
+    @include transform(translateX(100%));
+  }
+}
+
+@include keyframes(testimonials-prev-slide-show) {
+  from {
+    opacity: 0;
+    @include transform(translateX(-100%));
+  }
+
+  to {
+    opacity: 1;
+    @include transform(translateX(0));
+  }
+}
+
+@include keyframes(testimonials-next-slide-hide) {
+  from {
+    opacity: 1;
+    @include transform(translateX(0));
+  }
+
+  to {
+    opacity: 0;
+    @include transform(translateX(-100%));
+  }
+}
+
+@include keyframes(testimonials-next-slide-show) {
+  from {
+    opacity: 0;
+    @include transform(translateX(100%));
+  }
+
+  to {
+    opacity: 1;
+    @include transform(translateX(0));
   }
 }
