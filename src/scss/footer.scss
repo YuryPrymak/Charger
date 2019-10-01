@@ -38,13 +38,7 @@ footer {
         font-size: 24px;
         text-transform: uppercase;
         line-height: .9;
-        opacity: .9;
         @include transition(all, .2s, linear);
-  
-        &:hover,
-        &:focus {
-          opacity: 1;
-        }
   
         span:first-child {
           font-weight: bold;
@@ -62,7 +56,7 @@ footer {
       }
     }
 
-    nav {
+    .nav {
       @include media-md {
         display: none;
       }
@@ -75,12 +69,11 @@ footer {
           padding: 10px 0;
           font-family: $muli;
           text-transform: uppercase;
-          opacity: .8;
           @include transition(all, .2s, linear);
 
           &:hover,
           &:focus {
-            opacity: 1;
+            color: #ab7a4a;
           }
 
           &:last-child {
@@ -131,6 +124,15 @@ footer {
 
       @include media-sm {
         font-size: 18px;
+      }
+
+      a {
+        @include transition(all, .2s, linear);
+
+        &:hover,
+        &:focus {
+          color: #ab7a4a;
+        }
       }
     }
   }

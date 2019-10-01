@@ -17,15 +17,16 @@
     padding: 40px 10px;
   }
 
+  @include media-sm {
+    padding: 10px;
+  }
+
   .logo {
     display: flex;
     align-items: flex-start;
     position: absolute;
     cursor: pointer;
-
-    @include media-sm {
-      top: 23px;
-    }
+    z-index: 99;
 
     .title {
       max-width: 130px;
@@ -34,13 +35,6 @@
       font-size: 24px;
       text-transform: uppercase;
       line-height: .9;
-      opacity: .9;
-      @include transition(all, .2s, linear);
-
-      &:hover,
-      &:focus {
-        opacity: 1;
-      }
 
       span:first-child {
         font-weight: bold;
@@ -61,11 +55,10 @@
     position: absolute;
     left: 50%;
     @include transform(translateX(-50%));
+    z-index: 99;
 
     @include media-md {
       display: none;
-      flex-direction: column;
-      justify-content: center;
       position: fixed;
       top: 0;
       left: 0;
@@ -82,6 +75,8 @@
       @include media-md {
         flex-direction: column;
         align-items: center;
+        margin-top: 50vh;
+        @include transform(translateY(-50%));
       }
 
       li {
@@ -93,12 +88,11 @@
           padding: 10px 20px;
           font-family: $muli;
           text-transform: uppercase;
-          opacity: .8;
           @include transition(all, .2s, linear);
   
           &:hover,
           &:focus {
-            opacity: 1;
+            color: #ab7a4a;
           }
 
           @include media-md {
@@ -115,31 +109,34 @@
   }
 
   .nav-toggle {
-    display: flex;
+    display: block;
   }
 
   .btn-mobile-nav-default {
     display: none;
     position: fixed;
-    top: 40px;
     right: 10px;
     border: none;
     background-color: transparent;
     font-family: $muli;
-    font-size: 14px;
+    font-size: 18px;
     text-transform: uppercase;
     text-shadow: 0px 0px 2px #000;
     cursor: pointer;
     z-index: 999;
+    @include transition(all, .2s, linear);
+
+    &:hover,
+    &:focus {
+      color: #ab7a4a;
+    }
 
     @include media-md {
       display: block;
-      font-size: 18px;
     }
 
     @include media-sm {
       font-size: 24px;
-      top: 20px;
     }
 
     svg {
@@ -155,19 +152,21 @@
 
   .btn-mobile-nav-close {
     position: fixed;
-    top: 40px;
     right: 10px;
     border: none;
     background-color: transparent;
     cursor: pointer;
     z-index: 999;
 
-    @include media-sm {
-      top: 20px;
+    &:hover {
+      svg {
+        fill: #fff;
+      }
     }
 
     svg {
       fill: #e3a062;
+      @include transition(all, .2s, linear);
     }
   }
 
@@ -191,28 +190,26 @@
     }
 
     li {
-      margin-right: 30px;
+      position: relative;
 
-      &:not(:last-child) a::after {
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+
+      &:not(:last-child)::after {
         content: '/';
         position: absolute;
         top: 1px;
         right: -17px;
       }
 
-      &:last-child {
-        margin-right: 0;
-      }
-
       a {
-        position: relative;
         font-family: $muli;
-        opacity: .8;
         @include transition(all, .2s, linear);
 
         &:hover,
         &:focus {
-          opacity: 1;
+          color: #ab7a4a;
         }
 
         @include media-sm {
@@ -235,12 +232,11 @@
     font-family: $muli;
     font-size: 14px;
     cursor: pointer;
-    opacity: .8;
     @include transition(all, .2s, linear);
 
     &:hover,
     &:focus {
-      opacity: 1;
+      color: #ab7a4a;
     }
 
     @include media-md {
@@ -271,13 +267,12 @@
       font-family: $muli;
       font-size: 14px; 
       text-transform: uppercase;
-      opacity: .8;
       cursor: pointer;
       @include transition(all, .2s, linear);
 
       &:hover,
       &:focus {
-        opacity: 1;
+        color: #ab7a4a;
       }
 
       @include media-md {
@@ -340,17 +335,17 @@
 
       &::after {
         content: '';
-        width: 140px;
+        width: 130px;
         height: 1px;
         position: absolute;
         top: 14px;
-        left: 29px;
+        left: 33px;
         background-color: #989796;
 
         @include media-sm {
-          width: 125px;
+          width: 120px;
           top: 18px;
-          left: 36px;
+          left: 38px;
         }
       }
 
@@ -379,6 +374,8 @@
       }
 
       .slide {
+        width: 100%;
+        max-width: 450px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -391,13 +388,10 @@
           font-size: 120px;
           font-weight: bold;
           line-height: .9;
+          text-align: center;
 
           @include media-md {
             font-size: 112px;
-          }
-
-          @include media-sm {
-            text-align: center;
           }
 
           @include media-xs {
@@ -412,6 +406,7 @@
           font-family: $muli;
           font-size: 16px;
           line-height: 1.5;
+          text-align: center;
 
           @include media-md {
             font-size: 18px;
@@ -420,7 +415,6 @@
           @include media-sm {
             margin: 0 auto 25px auto;
             font-size: 24px;
-            text-align: center;
           }
         }
 
@@ -433,13 +427,12 @@
           color: #e3a062;
           font-family: $muli;
           text-transform: uppercase;
-          opacity: .8;
           cursor: pointer;
           @include transition(all, .2s, linear);
 
           &:hover,
           &:focus {
-            opacity: 1;
+            color: #fff;
           }
 
           @include media-md {

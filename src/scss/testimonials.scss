@@ -105,7 +105,7 @@
     &:hover,
     &:focus {
       svg {
-        fill: #fff;
+        fill: #ab7a4a;
       }
     }
 
@@ -114,7 +114,7 @@
       top: 0;
       left: -9px;
       fill: #808080;
-      @include transition(all, .3s, ease-in-out);
+      @include transition(all, .2s, linear);
     }
   }
 
